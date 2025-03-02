@@ -1,23 +1,164 @@
-<!-- index.html -->
-
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta charset="UTF-8" />
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/docsify@4/themes/vue.css"
-    />
-  </head>
-  <body>
-    <div id="app"></div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Art Style Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #1a1a1a;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            color: #ff6b00;
+            font-size: 4em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .artwork {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff6b00, #8f7a24, #00d9bb);
+            animation: bubble 3s infinite alternate;
+        }
+
+        @keyframes bubble {
+            from {
+                opacity: 0.5;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .clouds {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .abstract-elements {
+            position: absolute;
+            width: 50%;
+            left: 20%;
+            top: 30%;
+            font-size: 2em;
+            color: #fff;
+            text-shadow: -2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .text animated {
+            position: relative;
+            font-size: 1.5em;
+            margin: 20px;
+            animation: pulse 2s infinite alternate;
+        }
+
+        @keyframes pulse {
+            from {
+                transform: scale(0.9);
+                opacity: 0.5;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .icons {
+            position: absolute;
+            width: 30%;
+            height: 30px;
+            background: linear-gradient(45deg, #ff6b00, #8f7a24);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .artwork img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-left: 20px;
+            box-shadow: 0 0 20px rgba(255, 107, 0, 0.5);
+        }
+
+        .artwork svg {
+            width: 300px;
+            height: 300px;
+            fill: none;
+            stroke: #fff;
+        }
+
+        .artwork svg circle {
+            r: 100px !important;
+            cx: 150px !important;
+            cy: 150px !important;
+            stroke-linecap: round;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Creative Art Style</h1>
+
+        <div class="artwork">
+            <div class="bubble"></div>
+
+            <div class="clouds" id="clouds"></div>
+
+            <div class="abstract-elements">
+                <span>Abstract Art</span>
+                <span>Digital Design</span>
+                <span>Nexus of Creativity</span>
+            </div>
+
+            <div class="icons">
+                <img
+src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwMCBiZWdpbj0iYWRvYmU6bnMsaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdardPSJ4bWxucz0iaHR0cDovL3d3dy53My5vcmcuYsrc="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwMCBiZWdpbj0iYWRvYmU6bnMsaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdardPSJ4bWxucz0iaHR0DovL3d3dy53My5vcmcuY2VsbG9wL2JkZi1zeW50YXgtbnMjIj48c2lycG9yIGFhY2ggc3Ryb2tlLXdpZHRoPSIxNDEsIiBmaWxsPSIjODg4OGZmIi8+PC9zdmc+" alt="icon" />
+                <img
+src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwMCBiZWdpbj0iYWRvYmU6bnMsaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdardPSJ4bWxucz0iaHR0cDovL3d3dy53My5vcmcuYsrc="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwMCBiZWdpbj0iYWRvYmU6bnMsaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdardPSJ4bWxucz0iaHR0DovL3d3dy53My5vcmcuY2VsbG9wL2JkZi1zeW50YXgtbnMjIj48c2lycG9yIGFhY2ggc3Ryb2tlLXdpZHRoPSIxNDEsIiBmaWxsPSIjODg4OGZmIi8+PC9zdmc+" alt="icon" />
+            </div>
+        </div>
+    </div>
+
     <script>
-      window.$docsify = {
-        //...
-      };
+        // Create animated bubble effect
+        const waves = document.querySelector('.background');
+        for (let i = 0; i < 5; i++) {
+            const wave = document.createElement('div');
+            wave.style.position = 'absolute';
+            wave.style.left = Math.random() * 100 + '%';
+            wave.style.top = Math.random() * 100 + '%';
+            wave.style.width = '4px';
+            wave.style.height = '4px';
+            wave.style.backgroundColor = `rgba(255, 107, 0, ${Math.random()})`;
+            wave.style.borderRadius = '50%';
+            waves.appendChild(wave);
+        }
     </script>
-    <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  </body>
+</body>
 </html>
